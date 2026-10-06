@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Крестики-нолики: три символа</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Крестики-нолики</h1>
+    <p class="subtitle">У каждого игрока не больше трёх символов на поле</p>
+
+    <section class="controls" aria-label="Настройки игры">
+      <div class="segmented" role="group" aria-label="Режим игры">
+        <button type="button" class="seg active" data-mode="pvp">Игра вдвоём</button>
+        <button type="button" class="seg" data-mode="ai">Игра с компьютером</button>
+      </div>
+      <label class="level" id="levelBox" hidden>
+        <span>Сложность</span>
+        <select id="difficulty">
+          <option value="easy">Лёгкий</option>
+          <option value="medium" selected>Средний</option>
+          <option value="hard">Сложный</option>
+        </select>
+      </label>
+    </section>
+
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+
+    <div class="board" id="board" aria-label="Игровое поле"></div>
+
+    <button type="button" class="new-game" id="newGame">Новая игра</button>
+
+    <section class="rules">
+      <h2>Правила</h2>
+      <ul>
+        <li>Побеждает тот, кто выстроит три своих символа в ряд, столбец или по диагонали.</li>
+        <li>Когда игрок ставит четвёртый символ, его самый старый символ исчезает.</li>
+        <li>Побледневший символ исчезнет при следующем ходе этого игрока.</li>
+        <li>Победа проверяется после исчезновения старого символа.</li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
